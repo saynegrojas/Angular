@@ -1,0 +1,9 @@
+<app-add-task (onSubmitTask)="submitTask($event)"></app-add-task>
+<!-- loop over tasks over app-task-item -->
+<!-- pass a prop for each iteration of the tasks -->
+<app-task-item
+  *ngFor="let task of tasks"
+  [task]="task"
+  (onDeleteTask)="deleteTask(task)"
+  (onToggleReminder)="toggleReminder(task)"
+></app-task-item>
